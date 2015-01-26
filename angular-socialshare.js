@@ -10,13 +10,13 @@
 angular.module('djds4rce.angular-socialshare', [])
 .factory('$FB',['$window',function($window){
   return {
-    init: function(fbId){
+    init: function(fbId, channelUrl){
       if(fbId){
         this.fbId = fbId;
         $window.fbAsyncInit = function() {
           FB.init({
             appId: fbId,
-            channelUrl: 'app/channel.html',
+            channelUrl: channelUrl,
             status: true,
             xfbml: true
           });
